@@ -41,7 +41,7 @@ class ADAO extends DBUtil
             print "Error!: " . $e->getMessage() . "<br/>";
             die();
         }
-          $stmt=$dbh->prepare("select * from t_sub_cat");
+          $stmt=$dbh->prepare("select * from t_sub_cat where main_cat_id=1004");
           $stmt->execute();
          $row=$stmt->fetchAll();
         $dbh=null;
