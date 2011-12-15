@@ -1,0 +1,92 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	
+font-family:Arial,Helvetica,sans-serif;
+}
+
+/* Gradient 2 */
+.tb7 {
+	width: 221px;
+	background: transparent url('../images/bg.jpg') no-repeat;
+	color : #747862;
+	height:20px;
+	border:0;
+	padding:4px 8px;
+	margin-bottom:0px;
+}
+
+.selectfield {
+   width: 221px;
+	background: transparent url('../images/bg.jpg') no-repeat;
+	color : #747862;
+	height:28px;
+	border:0;
+	padding:4px;
+	margin-bottom:0px
+}
+
+
+#add_title {
+    color: #B22222;
+	font-size:12px;
+}
+#add_title a {
+    color: #B22222;
+	font-size:12px;
+	text-decoration:none;
+}
+#add_title a:hover{
+	text-decoration:underline;
+}
+p#meta-info{
+border-bottom: 1px dotted #BDBDBD;
+    color:#B22222;
+    font-size: 11px;
+    margin: 0;
+    padding: 4px 0;
+    text-shadow: 0 1px 0 #FFFFFF;
+	font-weight:bold;
+	
+}
+p#des-info{
+	color:#AFAFAF;
+	  font-size: 11px;
+    margin: 0;
+    padding: 4px 0;
+    text-shadow: 0 1px 0 #FFFFFF;
+	
+}
+p#contact-info{
+border-bottom: 1px dotted #BDBDBD;
+    color:#B22222;
+    font-size: 11px;
+    margin: 0;
+    padding: 4px 0;
+    text-shadow: 0 1px 0 #FFFFFF;
+	font-weight:bold;
+	
+}
+#detail_header{
+	 color: #B22222;
+    text-decoration: underline;
+	border-bottom: 1px dotted #BDBDBD;
+}
+#detail_header h3{
+	font-size:26px;
+}
+#tags
+{
+	 color: #B22222;
+	 font-size:14px;
+}
+#vals
+{
+	color:#AFAFAF;
+	  font-size: 14px;
+    margin: 0;
+    padding: 4px 0;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+	
+

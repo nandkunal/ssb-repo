@@ -1,0 +1,30 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_login_auth`(IN `uname` VARCHAR(50), IN `passwd` VARCHAR(50))
+	LANGUAGE SQL
+	NOT DETERMINISTIC
+	CONTAINS SQL
+	SQL SECURITY DEFINER
+	COMMENT 'Login Authentication  for admin and sub admin'
+BEGIN
+DECLARE res INT DEFAULT 0;
+DECLARE counter INT DEFAULT 0;
+DECLARE auth INT DEFAULT 0;
+DECLARE id1 INT DEFAULT 0;
+DECLARE res_msg VARCHAR(50);
+DECLARE role1 INT DEFAULT 0;
+SELECT COUNT(*) INTO counter FROM t_admin_login;
+IF counter > 0 THEN
+SELECT COUNT(*) INTO auth from t_admin_login where username=uname and password=passwd;
+IF auth=1 THEN
+SELECT id,role,username INTO id1,role1,uname from t_admin_login where username=uname and password=passwd;
+SET res=1;
+SET res_msg='Authenticated';
+ELSE
+SET res=2;
+SET res_msg='Not Authenticated';
+END IF;
+ELSE 
+SET res=3;
+SET res_msg='No Records';
+END IF;
+SELECT id1,res,res_msg,role1;
+END
