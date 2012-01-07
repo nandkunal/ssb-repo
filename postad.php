@@ -161,8 +161,15 @@ return true;
                                 <input type="text" name="cname" class="tb7" />
                               </label></td>
                             </tr>
+                                <tr>
+                              <td height="35">Company Website(if any)</td>
+                              <td height="35">&nbsp;</td>
+                              <td height="35"><label>
+                                <input type="text" name="website" class="tb7" />
+                              </label></td>
+                            </tr>
                             <tr>
-                              <td height="35">Company URL/Email</td>
+                              <td height="35">Company Email</td>
                               <td height="35">&nbsp;</td>
                               <td height="35"><label>
                                 <input type="text" name="crul" class="tb7" />
@@ -180,6 +187,13 @@ return true;
                               <td height="35">&nbsp;</td>
                               <td height="35"><label>
                                 <input type="text" name="contact" class="tb7" />
+                              </label></td>
+                            </tr>
+                               <tr>
+                              <td height="35">Mobile Number</td>
+                              <td height="35">&nbsp;</td>
+                              <td height="35"><label>
+                                <input type="text" name="mobile" class="tb7" />
                               </label></td>
                             </tr>
                             <tr>

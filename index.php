@@ -1,6 +1,6 @@
 <?php
 require_once("administrator/includes/UserFunctions.php");
-$cat_id=1002;
+$cat_id=1004;
 $banner=UserFunctions::getBannerName($cat_id);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

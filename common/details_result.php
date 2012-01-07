@@ -8,15 +8,15 @@
             <td><table width="726" border="0" align="left" cellpadding="0" cellspacing="0">
               
               <tr>
-                <td width="726" height="45"><table width="590" border="0" align="center" cellpadding="0" cellspacing="0">
+                <td width="726" height="45"><table width="590" border="0" align="left" cellpadding="0" cellspacing="0">
                   <tr>
                     <td height="5" colspan="3"><img src="images/searchbartop_big.jpg" width="700" height="6" /></td>
                   </tr>
                   <tr>
                     <td width="2" height="110" background="images/searchbarlft.jpg"></td>
-                    <td width="586" height="400" align="center" valign="top" background="images/searchbarbodybgbig.jpg"><table width="680" height="100" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <td width="586" height="400" align="left" valign="top" background="images/searchbarbodybgbig.jpg"><table width="680" height="100" border="0" align="left" cellpadding="0" cellspacing="0">
                       <tr>
-                        <td height="70" colspan="3"><table width="668" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <td height="70" colspan="3"><table width="668" border="0" align="left" cellpadding="0" cellspacing="0">
                               <tr>
                                 <td width="514"><div id="detail_header"><h3><?php echo $row5['company_name'];?></h3></div></td>
                                 <td width="154" align="right"><img src="<?php echo UserFunctions::getPriorityLargerTag($row5['priority']);?>" width="148" height="41" /></td>
@@ -24,7 +24,7 @@
                                                 </table></td>
                         </tr>
                       <tr>
-                        <td width="257" height="200" align="center" valign="middle"><table width="253" height="196" border="0" cellpadding="0" cellspacing="0">
+                        <td width="257" height="200" align="left" valign="middle"><table width="253" height="196" border="0" cellpadding="0" cellspacing="0">
                           <tr>
                             <td bgcolor="#FFFFFF"><img src="<?php echo $row5['company_logo'];?>"></td>
                           </tr>

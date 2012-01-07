@@ -108,7 +108,13 @@ return $tag;
 		case 3:
 	$tag="Plot";
 	break; 
-	;
+	case 4:
+	$tag="PG";
+	break;
+	case 5:
+	$tag="Agricultural Land";
+	break;
+	
 	
 }
 

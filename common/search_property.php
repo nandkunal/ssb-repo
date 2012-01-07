@@ -53,7 +53,7 @@ function MM_jumpMenu(targ,selObj,restore){ //v3.0
               <input name="search_key" type="text" value="Type a keyword?" class="tb7"  onclick="if(this.value=='Type a keyword?'){this.value=''; }" 
     onblur="if(this.value==''){this.value='Type a keyword?';}" />
             </td>
-            <td width="221px" align="left"><select name="category" size="1" id="category" class="selectfield"><option selected="selected" value="0">Select</option><option value="1">Kothi</option><option value="2">Flat</option><option value="3">Plot</option>
+            <td width="221px" align="left"><select name="category" size="1" id="category" class="selectfield"><option selected="selected" value="0">Select</option><option value="1">Kothi</option><option value="2">Flat</option><option value="3">Plot<option value="4">PG</option><option value="6">Agricultural Land</option>
            
             </select></td>
             <td width="294" align="right"><label>

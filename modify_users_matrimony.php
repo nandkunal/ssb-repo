@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once("administrator/includes/UserFunctions.php");
-require_once("administrator/includes/ADAO.php");
 $cat_id=1002;
 $banner=UserFunctions::getBannerName($cat_id);
 $details=ADAO::getUserdetailsById($_SESSION['id']);
@@ -26,6 +25,7 @@ body {
 -->
 </style>
 <script type="text/javascript "src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/datetimepicker_css.js"></script>
 
 </head>
 
@@ -83,7 +83,7 @@ body {
     <td>
         <!--Serach Content_tbl-->
                   
-         <?php include("common/search_results.php");?>
+         <?php include("common/post_modify_user_matrimony.php");?>
 
  
 

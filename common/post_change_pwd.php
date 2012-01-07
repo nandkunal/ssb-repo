@@ -17,7 +17,7 @@ require_once("administrator/includes/DefaultSearch.php");
                   <tr>
                     <td width="422" height="50" valign="middle"><table width="400" border="0" align="center" cellpadding="0" cellspacing="0">
                         <tr>
-                          <td width="427"><span class="style7">Post your Profile for Property</span></td>
+                          <td width="427"><span class="style7">Change Password</span></td>
                         </tr>
                     </table></td>
                   </tr>
@@ -28,7 +28,7 @@ require_once("administrator/includes/DefaultSearch.php");
                     <td height="19">&nbsp;</td>
                   </tr>
                   <tr>
-                    <td height="400"><form id="ad_form" name="ad_form" method="post" action="post_users_rent.php" onsubmit="return checkValidation(ad_form)">
+                    <td height="400"><form id="ad_form" name="ad_form" method="post" action="update_users_password.php" onsubmit="return checkValidation(ad_form)">
                       <table width="399" border="0" align="center" cellpadding="0" cellspacing="0">
                         <tr>
                           <td height="5" colspan="3"><img src="images/searchbartop_small.jpg" width="400" height="6" /></td>
@@ -37,84 +37,30 @@ require_once("administrator/includes/DefaultSearch.php");
                           <td width="1" background="images/searchbarlft.jpg"><img src="images/searchbarlft.jpg" width="2" height="2" /></td>
                           <td width="398" height="110" background="images/searchbarbodybgbig.jpg"><table width="380" border="0" align="center" cellpadding="0" cellspacing="0">
                            
-                            <tr>
-                              <td height="35">Purpose:</td>
-                              <td height="35">&nbsp;</td>
-                              <td height="35">
-                              <select name="purpose" size="1" id="category" class="selectfield"><option selected="selected" value="0">Select</option><option value="1">Buy</option><option value="2">Sell</option></select>
-           
-       
-                              </td>
-                            </tr>
                          
                             <tr>
-                              <td height="35">Property Type:</td>
-                              <td height="35">&nbsp;</td>
-                              <td height="35">
- <select name="category" size="1" id="category" class="selectfield"><option selected="selected" value="0">Select</option><option value="1">Kothi</option><option value="2">Flat</option><option value="3">Plot<option value="4">PG</option><option value="6">Agricultural Land</option>
-           
-            </select>
-           
-       
-                              </td>
-                            </tr>
-                             <tr>
-                              <td height="35"> Description</td>
+                              <td height="35">Old Password</td>
                               <td height="35">&nbsp;</td>
                               <td height="35"><label>
-                                <textarea name="des"></textarea>
-                              </label></td>
-                            </tr>
-                                <tr>
-                              <td height="35"> Location</td>
-                              <td height="35">&nbsp;</td>
-                              <td height="35"><label>
-                                <textarea name="location"></textarea>
-                              </label></td>
-                            </tr>
-                             <tr>
-                              <td height="35">City</td>
-                              <td height="35">&nbsp;</td>
-                              <td height="35"><label>
-                                <input type="text" name="city" class="tb7" />
+                                <input type="password" name="oldpwd" class="tb7" />
                               </label></td>
                             </tr>
                             
-                          <tr>
-                              <td height="35">District</td>
+                             <tr>
+                              <td height="35">New  Password</td>
                               <td height="35">&nbsp;</td>
                               <td height="35"><label>
-                                <input type="text" name="distt" class="tb7" />
+                                <input type="password" name="newpwd" class="tb7" />
                               </label></td>
                             </tr>
-                              <tr>
-                              <td height="35">State</td>
+                             <tr>
+                              <td height="35">Confirm  Password</td>
                               <td height="35">&nbsp;</td>
                               <td height="35"><label>
-                                <input type="text" name="state" class="tb7" />
+                                <input type="password" name="compwd" class="tb7" />
                               </label></td>
                             </tr>
-                              <tr>
-                              <td height="35">Country</td>
-                              <td height="35">&nbsp;</td>
-                              <td height="35"><label>
-                                <input type="text" name="country" class="tb7" value="India" />
-                              </label></td>
-                            </tr>
-                              <tr>
-                              <td height="35">Contact Number</td>
-                              <td height="35">&nbsp;</td>
-                              <td height="35"><label>
-                                <input type="text" name="cno" class="tb7" />
-                              </label></td>
-                            </tr>
-                              <tr>
-                              <td height="35">Email</td>
-                              <td height="35">&nbsp;</td>
-                              <td height="35"><label>
-                                <input type="text" name="email" class="tb7" />
-                              </label></td>
-                            </tr>
+                        
                             <tr>
                               <td height="35">&nbsp;</td>
                               <td height="35">&nbsp;</td>

@@ -1,8 +1,7 @@
 <?php
 session_start();
 require_once("administrator/includes/UserFunctions.php");
-require_once("administrator/includes/ADAO.php");
-$cat_id=1002;
+$cat_id=1001;
 $banner=UserFunctions::getBannerName($cat_id);
 $details=ADAO::getUserdetailsById($_SESSION['id']);
 ?>
@@ -83,7 +82,7 @@ body {
     <td>
         <!--Serach Content_tbl-->
                   
-         <?php include("common/search_results.php");?>
+         <?php include("common/post_change_pwd.php");?>
 
  
 

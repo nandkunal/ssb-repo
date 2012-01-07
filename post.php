@@ -4,6 +4,8 @@ require_once("administrator/includes/projectConstant.php");
 $cat_id=1004;
 $bt=$_POST['bt'];
 $cname=$_POST['cname'];
+$website=$_POST['website'];
+$mobile=$_POST['mobile'];
 $curl=$_POST['crul'];
 $contact=$_POST['contact'];
 $city=$_POST['city'];
@@ -15,7 +17,7 @@ $features="none";
 $logo=LOGO_FREE_ADS;
 $user_id=TEMP_USER_ID;
 $priority=1;
- $res=ADAO::postAds($user_id,$cat_id,$bt,$cname,$curl,$contact,$city,$distt,$state,$address,$logo,$cdes,$priority,$features);
+ $res=ADAO::postAds($user_id,$cat_id,$bt,$cname,$website,$curl,$contact,$mobile,$city,$distt,$state,$address,$logo,$cdes,$priority,$features);
 
 
 

@@ -25,8 +25,8 @@ class RoleManager {
                                  4=>CATEGORY_MANAGER_NAME,
                                  5=>ADS_MANAGER_NAME,
                                  6=>USER_MANAGER_NAME,
-                                 7=>SETTINGS_NAME,
-                                 8=>LOGOUT_NAME
+                                
+                                 7=>LOGOUT_NAME
                 );
 				    $this->availMenuUrl=array(1=>HOME_URL,
                                  2=>ADMIN_ACCOUNT_MANAGER_URL,
@@ -34,8 +34,8 @@ class RoleManager {
                                  4=>CATEGORY_MANAGER_URL,
                                  5=>ADS_MANAGER_URL,
                                  6=>USER_MANAGER_URL,
-                                 7=>SETTINGS_URL,
-                                 8=>LOGOUT_URL
+                                 
+                                 7=>LOGOUT_URL
                 );
                 break;
             case SUB_ADMIN_ROLE:

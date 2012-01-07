@@ -26,7 +26,7 @@ $res=ADAO::getDefaultCommunityList();
                 <td width="2" height="110" background="images/searchbarlft.jpg"></td>
                 <td width="586" height="110" background="images/searchbarbodybg.jpg"><table width="570" height="100" border="0" align="center" cellpadding="0" cellspacing="0">
                     <tr>
-                      <td width="163" rowspan="2"><img src="" height="100px" width="126px" border="0" /></td>
+                      <td width="163" rowspan="2">&nbsp;</td>
                       <td width="407" height="33"><table width="400" border="0" align="center" cellpadding="0" cellspacing="0">
                           <tr>
                             <td width="292"><div id="add_title"><h3><a href="#"><?php echo $det['name'];?></a></h3></div></td>

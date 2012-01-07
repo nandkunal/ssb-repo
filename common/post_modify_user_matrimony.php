@@ -1,8 +1,20 @@
 <?php
 require_once("administrator/includes/DefaultSearch.php");
+$matrimony_details=ADAO::getMatrimonyDetailsByUserId($_SESSION['id']);
 
 
 ?>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#logo").click(function(){
+	$("#file").hide();
+	$("#logo").hide();
+	$("#file_upload").show();
+	});
+});
+</script>
+
+
  
   <table width="1000" border="0" cellspacing="0" cellpadding="0">
       <tr>
@@ -17,7 +29,7 @@ require_once("administrator/includes/DefaultSearch.php");
                   <tr>
                     <td width="422" height="50" valign="middle"><table width="400" border="0" align="center" cellpadding="0" cellspacing="0">
                         <tr>
-                          <td width="427"><span class="style7">Post your Classifieds</span></td>
+                          <td width="427"><span class="style7">Modify your Profile for Matrimonial Match </span></td>
                         </tr>
                     </table></td>
                   </tr>
@@ -28,7 +40,8 @@ require_once("administrator/includes/DefaultSearch.php");
                     <td height="19">&nbsp;</td>
                   </tr>
                   <tr>
-               <td height="400"><form id="ad_form" name="ad_form" method="post" action="post_users_classifieds.php" onsubmit="return checkValidation(ad_form)"  enctype="multipart/form-data">
+                    <td height="400"><form id="modify_profile_form" name="ad_form" method="post" action="update_users_matrimony.php" onsubmit="return checkValidation()"
+                    enctype="multipart/form-data">
                       <table width="399" border="0" align="center" cellpadding="0" cellspacing="0">
                         <tr>
                           <td height="5" colspan="3"><img src="images/searchbartop_small.jpg" width="400" height="6" /></td>
@@ -37,116 +50,73 @@ require_once("administrator/includes/DefaultSearch.php");
                           <td width="1" background="images/searchbarlft.jpg"><img src="images/searchbarlft.jpg" width="2" height="2" /></td>
                           <td width="398" height="110" background="images/searchbarbodybgbig.jpg"><table width="380" border="0" align="center" cellpadding="0" cellspacing="0">
                             <tr>
-                              <td width="154" height="35">Name</td>
-                              <td width="4" height="35">&nbsp;</td>
-                              <td width="222" height="35"><label>
-                                <input name="name" type="text" class="tb7"  />
-                              </label></td>
-                            </tr>
-                            <tr>
-                              <td height="35">Business Type</td>
+                              <td height="35">Profile Created for:</td>
                               <td height="35">&nbsp;</td>
-                              <td height="35"><label>
-                              <select name="bt" size="1" id="category" class="selectfield" ><option selected="selected" value="0">Select</option>
-            <?php
-
-
-               $res=ADAO::getSearchCategory();
-                foreach($res as $row){
-
-                    echo '<option value="'.$row['id'].'">'.$row['value'].'</option>';
-                  
-                }
-               
-
-                ?>
-            </select>
-                              </label></td>
+                              <td height="35">
+                              <select name="cat" size="1" id="category" class="selectfield"><option selected="selected" value="<?php echo $matrimony_details['sex'];?>"><?php if($matrimony_details['sex']==1)echo "Bride"; else echo "Groom";?>
+                              
+                              </option><option value="1">Groom</option><option value="2">Bride</option></select>
+           
+       
+                              </td>
                             </tr>
                          
                             <tr>
-                              <td height="35">Company Name</td>
+                              <td height="35">Caste</td>
                               <td height="35">&nbsp;</td>
                               <td height="35"><label>
-                                <input type="text" name="cname" class="tb7" />
+                                <input type="text" name="caste" class="tb7" value="<?php echo $matrimony_details['user_caste'];?>" />
                               </label></td>
                             </tr>
                             <tr>
-                              <td height="35">Company Website(if any)</td>
+                              <td height="35">Date of Birth</td>
                               <td height="35">&nbsp;</td>
-                              <td height="35"><label>
-                                <input type="text" name="website" class="tb7" />
-                              </label></td>
+                              <td height="35">
+                                <input type="text" name="dob" class="tb7" id="dob" value="<?php echo $matrimony_details['dob'];?>" /><img src="images/cal.gif" onClick="javascript:NewCssCal('dob','yyyyMMdd')" style="cursor:pointer"/>
+                              </td>
                             </tr>
                             <tr>
-                              <td height="35">Company Email</td>
+                              <td height="35"> Age</td>
                               <td height="35">&nbsp;</td>
                               <td height="35"><label>
-                                <input type="text" name="email" class="tb7" />
-                              </label></td>
-                            </tr>
-                            <tr>
-                              <td height="35"> Company Address </td>
-                              <td height="35">&nbsp;</td>
-                              <td height="35"><label>
-                                <textarea name="address"></textarea>
+                               <input type="text" name="age" class="tb7" value="<?php echo $matrimony_details['age'];?>" />
                               </label></td>
                             </tr>
                               <tr>
+                              <td height="35">Height</td>
+                              <td height="35">&nbsp;</td>
+                              <td height="35"><label>
+                                <input type="text" name="height" class="tb7" value="<?php echo $matrimony_details['height'];?>" />
+                              </label></td>
+                            </tr>
+                               <tr>
+                              <td height="35">Qualifications</td>
+                              <td height="35">&nbsp;</td>
+                              <td height="35"><label>
+                                <input type="text" name="qual" class="tb7" value="<?php echo $matrimony_details['qualification'];?>"  />
+                              </label></td>
+                            </tr>
+                            <tr>
                               <td height="35">Contact Number</td>
                               <td height="35">&nbsp;</td>
                               <td height="35"><label>
-                                <input type="text" name="contact" class="tb7" />
+                                <input type="text" name="cno" class="tb7" value="<?php echo $matrimony_details['cno'];?>"/>
                               </label></td>
                             </tr>
-                                 <tr>
-                              <td height="35">Mobile Number</td>
-                              <td height="35">&nbsp;</td>
-                              <td height="35"><label>
-                                <input type="text" name="mobile" class="tb7" />
-                              </label></td>
-                            </tr>
+                            
                             <tr>
-                              <td height="35">City</td>
-                              <td height="35">&nbsp;</td>
-                              <td height="35"><label>
-                                <input type="text" name="city" class="tb7" />
-                              </label></td>
-                            </tr>
-                            <tr>
-                              <td height="35">Distt.</td>
-                              <td height="35">&nbsp;</td>
-                              <td height="35"><label>
-                                <input type="text" name="distt" class="tb7" />
-                              </label></td>
-                            </tr>
-                            <tr>
-                              <td height="35">state</td>
-                              <td height="35">&nbsp;</td>
-                              <td height="35"><label>
-                                <input type="text" name="state" class="tb7" />
-                              </label></td>
+                              <td height="35">Profile Picture</td>
+                              <td height="35"></td>
+                              <td height="35"><span id="file"><?php echo $matrimony_details['profile_pic'];?></span><span id="file_upload" style="display:none"><label>
+                                <input type="file" name="file" class="tb7" />
+                              </label></span><a href="#" id="logo" style="color:#000; text-decoration:underline; font-size:10px">Change</a></td>
                             </tr>
                         
-                           <tr>
-                              <td height="35">Upload Logo</td>
-                              <td height="35">&nbsp;</td>
-                              <td height="35"><label>
-                                <input type="file" name="file" class="tb7" />
-                              </label></td>
-                            </tr>
                             <tr>
-                              <td height="35">Company Description</td>
+                              <td height="35">About Me(Brief Description)</td>
                               <td height="35">&nbsp;</td>
                               <td height="35"><label>
-                                <textarea name="cdes"></textarea>
-                              </label></td>
-                            </tr>
-                              <tr>
-                              <td height="35">Company Features</td>
-                              <td height="35">&nbsp;</td>
-                              <td height="35"><label>
-                                <textarea name="features"></textarea>
+                                <textarea name="des"><?php echo $matrimony_details['des'];?></textarea>
                               </label></td>
                             </tr>
                             <tr>

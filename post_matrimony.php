@@ -3,6 +3,7 @@ session_start();
 require_once("administrator/includes/UserFunctions.php");
 $cat_id=1002;
 $banner=UserFunctions::getBannerName($cat_id);
+$details=ADAO::getUserdetailsById($_SESSION['id']);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -30,11 +31,11 @@ body {
 
 <body>
 <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
-<?php if(UserFunctions::isUserAuthenticated()){echo '<tr><td><table width="210" height="30" border="0" align="right" cellpadding="0" cellspacing="0">
+<?php if(UserFunctions::isUserAuthenticated()){echo '<tr><td><table width="220" height="30" border="0" align="right" cellpadding="0" cellspacing="0">
         <tr>
-          <td width="100"><span style="color:#fff">Welcome Test</span></td>
+          <td width="110"><span style="color:#fff;font-size:12px">Welcome '.$details['name'].'</span></td>
 		   <td width="10"><span style="color:#fff">|</span></td>
-          <td width="100"> <a href="logout.php" style="color:#fff;text-decoration:none">Logout</a></td>
+          <td width="100"> <a href="logout.php" style="color:#fff;text-decoration:none;font-size:12px">Logout</a></td>
 		  </tr>
 		  </table></td></tr>
 		   ';} else {?>

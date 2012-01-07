@@ -50,6 +50,25 @@ class ADAO extends DBUtil
 
     }
 	
+	    public static function getSearchCategoryNameById($id){
+          try
+        {
+            $dbh = new PDO(DB_DSN, DB_LOGIN, DB_PASSWORD);
+
+        }
+        catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+          $stmt=$dbh->prepare("select value from t_sub_cat where main_cat_id=1004 and id=".$id."");
+          $stmt->execute();
+         $row=$stmt->fetch();
+        $dbh=null;
+        return $row['value'];
+
+
+    }
+	
 	    public static function getMainCategoryList(){
           try
         {
@@ -80,7 +99,7 @@ class ADAO extends DBUtil
             die();
         }
             
-          $stmt=$dbh->prepare("select * from t_user_classified where status=? and priority=? and cat_id=? limit 3");
+          $stmt=$dbh->prepare("select * from t_user_classified where status=? and priority=? and cat_id=? limit 10");
           $stmt->bindParam(1,$status);
           $stmt->bindParam(2,$priority);
           $stmt->bindParam(3,$category);
@@ -112,6 +131,8 @@ class ADAO extends DBUtil
         $dbh=null;
          return $row;
     }
+	
+	
 
     public  static function updateAdminList($name,$username,$pass,$id){
              try
@@ -191,7 +212,7 @@ class ADAO extends DBUtil
 
     }
 
-public static function createUsersAccount($username,$password,$name,$email,$contact,$city,$distt,$state,$country,$address,$role,$status){
+public static function createUsersAccount($username,$password,$name,$email,$contact,$city,$distt,$state,$country,$address,$role,$status,$bloodgroup,$donor){
              try
         {
             $dbh = new PDO(DB_DSN, DB_LOGIN, DB_PASSWORD);
@@ -201,8 +222,8 @@ public static function createUsersAccount($username,$password,$name,$email,$cont
             print "Error!: " . $e->getMessage() . "<br/>";
             die();
         }
-
-          $stmt=$dbh->prepare("CALL ".SP_USER_REG. "(?,?,?,?,?,?,?,?,?,?,?,?)");
+          $doj=date('Y-m-d H:i:s');
+          $stmt=$dbh->prepare("CALL ".SP_USER_REG. "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 		  $password=md5($password);
         $stmt->bindParam(1,$username);
         $stmt->bindParam(2,$password);
@@ -214,8 +235,11 @@ public static function createUsersAccount($username,$password,$name,$email,$cont
         $stmt->bindParam(8,$state);
         $stmt->bindParam(9,$country);
         $stmt->bindParam(10,$address);
-        $stmt->bindParam(11,$status);
-        $stmt->bindParam(12,$role);
+        $stmt->bindParam(11,$role);
+        $stmt->bindParam(12,$status);
+		$stmt->bindParam(13,$bloodgroup);
+		$stmt->bindParam(14,$donor);
+		$stmt->bindParam(15,$doj);
         $stmt->execute();
          $res=$stmt->fetch();
         $dbh=null;
@@ -223,7 +247,7 @@ public static function createUsersAccount($username,$password,$name,$email,$cont
 
     }
 
-    public static function postAds($user_id,$cat_id,$bt,$cname,$curl,$contact,$city,$distt,$state,$address,$logo,$cdes,$priority,$features){
+    public static function postAds($user_id,$cat_id,$bt,$cname,$website,$curl,$contact,$mobile,$city,$distt,$state,$address,$logo,$cdes,$priority,$features){
 		  $status=1;
              try
         {
@@ -237,7 +261,7 @@ public static function createUsersAccount($username,$password,$name,$email,$cont
          
       
 
-          $stmt=$dbh->prepare("INSERT into t_user_classified VALUES(NULL,".$user_id.",".$cat_id.",".$bt.",'".$cname."','".$curl."','".$contact."','".$city."','".$distt."','".$state."','".$address."','".$logo."','".$cdes."','".$features."',".$priority.",".$status.")");
+          $stmt=$dbh->prepare("INSERT into t_user_classified VALUES(NULL,".$user_id.",".$cat_id.",".$bt.",'".$cname."','".$curl."','".$website."','".$contact."','".$mobile."','".$city."','".$distt."','".$state."','".$address."','".$logo."','".$cdes."','".$features."',".$priority.",".$status.")");
         
 		$stmt->execute();
          
@@ -501,10 +525,28 @@ public static function createUsersAccount($username,$password,$name,$email,$cont
          $row=$stmt->fetchAll();
         $dbh=null;
          return $row;	
+		}
 		
+				public static function getUsersListApproval(){
 			
-			
-			
+			     try
+        {
+            $dbh = new PDO(DB_DSN, DB_LOGIN, DB_PASSWORD);
+
+        }
+        catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+
+          $stmt=$dbh->prepare("select * from  t_user_account where status=0");
+         
+
+          $stmt->execute();
+
+         $row=$stmt->fetchAll();
+        $dbh=null;
+         return $row;	
 		}
 		public static function getClassifiedDetails($id){
 				
@@ -530,6 +572,114 @@ public static function createUsersAccount($username,$password,$name,$email,$cont
 			
 			
 		}
+		
+			public static function getClassifiedDetailsByUserId($id){
+				
+			     try
+        {
+            $dbh = new PDO(DB_DSN, DB_LOGIN, DB_PASSWORD);
+
+        }
+        catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+
+          $stmt=$dbh->prepare("select * from  t_user_classified where user_id=".$id."");
+         
+
+          $stmt->execute();
+
+         $row=$stmt->fetch();
+        $dbh=null;
+         return $row;	
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+public static function getMatrimonyDetailsByUserId($id){
+				
+			     try
+        {
+            $dbh = new PDO(DB_DSN, DB_LOGIN, DB_PASSWORD);
+
+        }
+        catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+
+          $stmt=$dbh->prepare("select * from  t_user_marraigeportal where user_id=".$id."");
+         
+
+          $stmt->execute();
+
+         $row=$stmt->fetch();
+        $dbh=null;
+         return $row;	
+			
+			
+			
+		}
+		
+		
+		
+		
+		public static function getCommunityDetailsByUserId($id){
+				
+			     try
+        {
+            $dbh = new PDO(DB_DSN, DB_LOGIN, DB_PASSWORD);
+
+        }
+        catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+
+          $stmt=$dbh->prepare("select * from  t_user_marraigeportal where user_id=".$id."");
+         
+
+          $stmt->execute();
+
+         $row=$stmt->fetch();
+        $dbh=null;
+         return $row;	
+			
+			
+			
+		}
+		
+		public static function getPropertyDetailsByUserId($id){
+				
+			     try
+        {
+            $dbh = new PDO(DB_DSN, DB_LOGIN, DB_PASSWORD);
+
+        }
+        catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+
+          $stmt=$dbh->prepare("select * from  t_user_realestate where user_id=".$id."");
+         
+
+          $stmt->execute();
+
+         $row=$stmt->fetch();
+        $dbh=null;
+         return $row;	
+			
+			
+			
+		}
+		
 		
 public static function getAllClassifiedDetails(){
 				
@@ -592,7 +742,7 @@ public static function updateUserAccounts($id,$name,$username,$password,$email,$
             die();
         }
          $password=md5($password);
-          $stmt=$dbh->prepare("update t_user_account set name='".$name."',username='".$username."',password='".$password."',email='".$email."',cno='".$cno."',status=".$status." where id=".$id."");
+          $stmt=$dbh->prepare("update t_user_account set name='".$name."',username='".$username."',email='".$email."',cno='".$cno."',status=".$status." where id=".$id."");
          
 
           $stmt->execute();
@@ -702,7 +852,7 @@ public static function getMatrimonySearchResults($key,$cat,$city){
             die();
         }
 
-          $stmt=$dbh->prepare("select * from t_user_marraigeportal  where des like '%".$key."%' and sex=".$cat." and user_caste='".$city."'");
+          $stmt=$dbh->prepare("select * from t_user_marraigeportal  where des like '%".$key."%' or sex=".$cat." or user_caste='".$city."'");
          
 
           $stmt->execute();
@@ -724,7 +874,7 @@ public static function getMatrimonySearchResults($key,$cat,$city){
             die();
         }
 
-          $stmt=$dbh->prepare("select * from t_user_realestate where estate_des like '%".$key."%' and estate_type=".$cat." and estate_city='".$city."'");
+          $stmt=$dbh->prepare("select * from t_user_realestate where estate_des like '%".$key."%' or estate_type=".$cat." or estate_city='".$city."'");
          
 
           $stmt->execute();
@@ -793,6 +943,33 @@ public static function getMatrimonySearchResults($key,$cat,$city){
 		
 		
 	}
+	
+	public static function updateUsersProfile($id,$contact,$city,$distt,$state,$country,$address,$bloodgroup){
+		
+		
+	
+			  try
+        {
+            $dbh = new PDO(DB_DSN, DB_LOGIN, DB_PASSWORD);
+
+        }
+        catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+         
+          $stmt=$dbh->prepare("update t_user_account set cno='".$contact."',city='".$city."',district='".$distt."',state='".$state."',country='".$country."',address='".$address."',bloodgroup='".$bloodgroup."' where id=".$id."");
+         
+
+          $stmt->execute();
+           $dbh=null;
+         return true;	
+		
+		
+		
+		
+		
+	}
 	public static function deleteCategories($array_id){
 		
 	  try
@@ -818,6 +995,83 @@ public static function getMatrimonySearchResults($key,$cat,$city){
 		
 		
 	}
+	
+	public static function getUsersPortalAccessMenu($id){
+		$portal_access_details=array();
+		
+		  try
+        {
+            $dbh = new PDO(DB_DSN, DB_LOGIN, DB_PASSWORD);
+
+        }
+        catch (PDOException $e) {
+            print "Error!: " . $e->getMessage() . "<br/>";
+            die();
+        }
+		   $stmt1=$dbh->prepare("select user_id from t_user_classified where user_id=".$id."");
+            $stmt1->execute();
+			$count1=$stmt1->rowCount();
+			
+			 $stmt2=$dbh->prepare("select user_id from t_user_marraigeportal where user_id=".$id."");
+            $stmt2->execute();
+			$count2=$stmt2->rowCount();
+			
+					 $stmt3=$dbh->prepare("select user_id from t_user_community where user_id=".$id."");
+            $stmt3->execute();
+			$count3=$stmt3->rowCount();
+			
+					 $stmt4=$dbh->prepare("select user_id from  t_user_realestate where user_id=".$id."");
+            $stmt4->execute();
+			$count4=$stmt4->rowCount();
+			
+			if($count1>0){
+				$portal_access_details['classified_portal_menu_name']="Modify Classifieds Portal";
+				$portal_access_details['classified_portal_menu_url']="modify_users_classifieds.php";
+			}
+			else
+			{
+			$portal_access_details['classified_portal_menu_name']="Classifieds Portal Access";
+				$portal_access_details['classified_portal_menu_url']="post_classifieds.php";	
+			}
+			
+			if($count2>0){
+				$portal_access_details['matrimony_portal_menu_name']="Modify Matrimony Portal";
+				$portal_access_details['matrimony_portal_menu_url']="modify_users_matrimony.php";
+			}
+			else
+			{
+			$portal_access_details['matrimony_portal_menu_name']="Matrimony Portal Access";
+				$portal_access_details['matrimony_portal_menu_url']="post_matrimony.php";	
+			}
+				
+				if($count3>0){
+				$portal_access_details['community_portal_menu_name']="Modify Community Portal";
+				$portal_access_details['community_portal_menu_url']="modify_users_community.php";
+			}
+			else
+			{
+			$portal_access_details['community_portal_menu_name']="Community Portal Access";
+				$portal_access_details['community_portal_menu_url']="post_community.php";	
+			}
+				
+				if($count4>0){
+				$portal_access_details['property_portal_menu_name']="Modify Property Portal";
+				$portal_access_details['property_portal_menu_url']="modify_users_property.php";
+			}
+			else
+			{
+			$portal_access_details['property_portal_menu_name']="Property Portal Access";
+				$portal_access_details['property_portal_menu_url']="post_property.php";	
+			}
+				
+			return $portal_access_details;	
+			
+		
+		
+		
+		
+	}
+	
 	
 }
 ?>

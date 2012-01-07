@@ -38,23 +38,21 @@ $menuUrl=$roleAssigned->getMenuUrl();
                         <table height="200px" cellpadding="0" cellspacing="20px" align="center">
                         <tr>
                               <td align="center"><div class="roundbox"><br />
-                  <a href="#" title="Quick Reservation" id="quick_reservation"><img src="images/icon.jpg" height="53" width="50" alt="Reservation" border="0" /></a><br />
+                  <a href="user_profile_manager.php" title="Quick Classifieds View" id="quick_reservation"><img src="images/icon.jpg" height="53" width="50" alt="Reservation" border="0" /></a><br />
                  Quick View</div></td>
                  
-                    <td align="center"><div class="roundbox"><br />
-                  <a href="#" title="Quick Search"><img src="images/search.jpg" height="48" width="48" alt="search" border="0" /></a><br />
-                  Quick Search </div></td>
+                 
                  
                          
                            <td align="center"><div class="roundbox"><br />
-                  <a href="#" title="Pending Payment" id="pendingpayments"><img src="images/x-office-spreadsheet.png" height="48" width="48" alt="Pending" border="0" /></a><br />
+                  <a href="get_pending_approvals.php" title="Pending Approvals" id="pendingpayments"><img src="images/x-office-spreadsheet.png" height="48" width="48" alt="Pending" border="0" /></a><br />
                 
                   Pending <br />
                  Approvals
                   </div></td>
                  
                       <td align="center"><div class="roundbox"><br />
-                  <a href="#" title="Pending Payment" id="pendingpayments"><img src="images/users.png" height="48" width="48" alt="Pending" border="0" /></a><br />
+                  <a href="user_account_manager.php" title="User Manager" id="pendingpayments"><img src="images/users.png" height="48" width="48" alt="Pending" border="0" /></a><br />
                 
                   User <br />
                  Manager </div></td>

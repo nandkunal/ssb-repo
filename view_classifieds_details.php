@@ -34,20 +34,20 @@ body {
 <body>
 <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td height="30"><form id="form1" name="form1" method="post" action="">
+    <td height="30"> <form id="form1" name="form1" method="post" action="checkUsersLogin.php">
       <table width="936" height="25" border="0" align="right" cellpadding="0" cellspacing="0">
         <tr>
           <td width="247">&nbsp;</td>
           <td width="418" align="right"><label>
-            <input name="textfield2" type="text" class="tb7" />
+            <input name="username" type="text" class="tb7" value=""  />
           </label></td>
           <td width="165" align="right"><label>
-            <input name="textfield" type="password" class="tb7" />
+            <input name="password" type="password" class="tb7" />
           </label></td>
-          <td width="106" align="center"><img src="images/login.jpg" width="70" height="22" /></td>
+          <td width="106" align="center"><input type="image" src="images/login.jpg" width="70" height="22" /></td>
         </tr>
       </table>
-        </form>    </td>
+        </form>   </td>
   </tr>
   <tr>
     <td height="128"><?php include("common/header.php"); ?></td>

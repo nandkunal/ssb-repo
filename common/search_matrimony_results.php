@@ -31,7 +31,7 @@ $res=ADAO::getDefaultMatrimonySearch();
                       <td width="407" height="33"><table width="400" border="0" align="center" cellpadding="0" cellspacing="0">
                           <tr>
                             <td width="292"><div id="add_title"><h3><a href="#"><?php echo $det['name'];?></a></h3></div></td>
-                            <td width="108"><img src="" width="100" height="30" /></td>
+                            <td width="108">&nbsp;</td>
                           </tr>
                           <tr>
                           <td colspan="2"><p id="meta-info">Matrimony&nbsp;|&nbsp;<?php if($row['sex']==1)echo "Bride"; else echo "Groom";?></p></td>

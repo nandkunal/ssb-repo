@@ -33,7 +33,7 @@ $val=$res->getResult();
                             <td width="108"><img src="<?php echo UserFunctions::getPriorityLargerTag($row['priority']);?>" width="100" height="30" /></td>
                           </tr>
                           <tr>
-                          <td colspan="2"><p id="meta-info">Classifieds&nbsp;|&nbsp;<?php echo $row['b_type'];?></p></td>
+                          <td colspan="2"><p id="meta-info">Classifieds&nbsp;|&nbsp;<?php echo ADAO::getSearchCategoryNameById($row['b_type']);?></p></td>
                       </table></td>
                     </tr>
                     <tr>
@@ -66,7 +66,7 @@ $val=$res->getResult();
 		}
 		?>
         </td>
-        <td>
+        <td valign="top">
         <?php if(UserFunctions::isUserAuthenticated()){
 			 
 			?>

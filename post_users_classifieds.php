@@ -8,6 +8,8 @@ $cat_id=1004;
 $name=$_POST['name'];
 $bt=$_POST['bt'];
 $cname=$_POST['cname'];
+$website=$_POST['website'];
+$mobile=$_POST['mobile'];
 $contact=$_POST['contact'];
 $curl=$_POST['email'];
 $address=$_POST['address'];
@@ -28,7 +30,7 @@ chmod ($logo_file_path_thumb."/".$logo ,0755);
 $user_id=$_SESSION['id'];
 $role=USER_ROLE;
 $priority=3;
- $res=ADAO::postAds($user_id,$cat_id,$bt,$cname,$curl,$contact,$city,$distt,$state,$address,$logo_path,$cdes,$priority,$features);
+ $res=ADAO::postAds($user_id,$cat_id,$bt,$cname,$website,$curl,$contact,$mobile,$city,$distt,$state,$address,$logo,$cdes,$priority,$features);
 
 if($res==1){
 	?>

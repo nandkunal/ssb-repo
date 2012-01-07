@@ -53,7 +53,7 @@ define('USER_ACCOUNT_MANAGER_URL','user_account_manager.php');
 define('CATEGORY_MANAGER_URL','category_manager.php');
 define('ADS_MANAGER_URL','ads_manager.php');
 define('USER_MANAGER_URL','user_profile_manager.php');
-define('SETTINGS_URL','settings.php');
+//define('SETTINGS_URL','settings.php');
 define('LOGOUT_URL','logout.php');
 
 
@@ -63,7 +63,7 @@ define('USER_ACCOUNT_MANAGER_NAME','User Account Manager');
 define('CATEGORY_MANAGER_NAME','Category Manager');
 define('ADS_MANAGER_NAME','Ads Manager');
 define('USER_MANAGER_NAME','User Profile Manager');
-define('SETTINGS_NAME','Settings');
+//define('SETTINGS_NAME','Settings');
 define('LOGOUT_NAME','Logout');
 /*
  * DIFFERENT ROLES

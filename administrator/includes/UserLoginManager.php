@@ -7,7 +7,7 @@ class UsersLogin
 
     private $id=0;
     private $res=0;
-	private $status=0;
+	private $status=4;
 
     public  static function Authenticate($username,$pass){
         try
@@ -28,7 +28,7 @@ class UsersLogin
         $row=$stmt->fetch();
         $loginInfo=new UsersLogin();
         $loginInfo->id=$row['id1'];
-        $loginInfo->status=$row['status'];
+        $loginInfo->status=$row['stat'];
         $loginInfo->res=$row['res'];
         $dbh=null;
         return $loginInfo;

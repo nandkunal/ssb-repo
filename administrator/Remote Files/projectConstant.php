@@ -5,13 +5,14 @@ ob_start();
  *
  */
 define('DB_HOSTNAME','localhost');
-define('DB_LOGIN', 'kitindia_ssbuser');
-define('DB_PASSWORD', 'kunalnand');
-define('DB_DIR', 'kitindia_');
+define('DB_LOGIN', 'socialse_user');
+define('DB_PASSWORD', 'user123');
+define('DB_DIR', 'socialse_');
 define('DB_DATABASE', DB_DIR.'ssb');
 define('DB_TABLE_ADMIN_DIR',"t_admin");
 define('DB_TABLE_USER_DIR',"t_user");
 define('DB_DSN','mysql:dbname='.DB_DATABASE.';host='.DB_HOSTNAME.'');
+
 
 /*ROLES FOR ADMIN, USER AND SUB-ADMINS
 */
@@ -52,7 +53,7 @@ define('USER_ACCOUNT_MANAGER_URL','user_account_manager.php');
 define('CATEGORY_MANAGER_URL','category_manager.php');
 define('ADS_MANAGER_URL','ads_manager.php');
 define('USER_MANAGER_URL','user_profile_manager.php');
-define('SETTINGS_URL','settings.php');
+//define('SETTINGS_URL','settings.php');
 define('LOGOUT_URL','logout.php');
 
 
@@ -62,7 +63,7 @@ define('USER_ACCOUNT_MANAGER_NAME','User Account Manager');
 define('CATEGORY_MANAGER_NAME','Category Manager');
 define('ADS_MANAGER_NAME','Ads Manager');
 define('USER_MANAGER_NAME','User Profile Manager');
-define('SETTINGS_NAME','Settings');
+//define('SETTINGS_NAME','Settings');
 define('LOGOUT_NAME','Logout');
 /*
  * DIFFERENT ROLES

@@ -40,7 +40,7 @@ a:active {
 <body>
 <table width="990" height="30" border="0" cellpadding="5" cellspacing="0">
   <tr>
-    <td width="777" align="left" valign="middle" bgcolor="#b12322"><span class="style4"><a href="index.php">Home</a> |<a href="#"> Classifides</a> | <a href="matrimony.php">Matrimony</a> | <a href="community.php">Community</a> |<a href="property.php"> Property </a>| <a href="login-signup.php">Membership</a> | <a href="#">Get A Frenchisee </a></span></td>
+    <td width="777" align="left" valign="middle" bgcolor="#b12322"><span class="style4"><a href="index.php">Home</a> |<a href="index.php"> Classifieds</a> | <a href="matrimony.php">Matrimony</a> | <a href="community.php">Community</a> |<a href="property.php"> Property </a>| <a href="login-signup.php">Membership</a> | <a href="#">Get A Franchise  </a></span></td>
     <?php if(!UserFunctions::isUserAuthenticated()){?>
     <td width="193" align="center" valign="middle" bgcolor="#b12322"><a href="postad.php"><img src="images/postanad.jpg" width="164" height="32" border="0" /></a></td>
     <?php }?>

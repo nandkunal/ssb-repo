@@ -45,29 +45,29 @@ a:active {
     <td height="120" background="images/footerbody.jpg"><table width="950" height="100" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
         <td width="57">&nbsp;</td>
-        <td width="146"><p class="style5 style6">Classified Portal <br />
+        <td width="146"><p class="style5 style6"><a href="http://www.socialsearchbook.com">Classified Portal <br />
           Matrimony Portal <br />
           Community Portal <br />
-          Property Portal <br />
+          Property Portal</a> <br />
         </p></td>
         <td width="1" background="images/footerdiv.jpg"></td>
         <td width="57">&nbsp;</td>
-        <td width="146"><p class="style5 style6">Joun us now<br />
+        <td width="146"><p class="style5 style6"><a href="contactus.php">Joun us now<br />
           Register Online <br />
           Payment Options<br />
-          Feedback <br />
+          Feedback</a> <br />
         </p></td>
         <td width="1" background="images/footerdiv.jpg"></td>
         <td width="48">&nbsp;</td>
-        <td width="157"><p class="style5 style6">Request a frenchisee  <br />
+        <td width="157"><p class="style5 style6"><a href="contactus.php">Request a frenchisee  <br />
           Become a partner <br />
           Business opertunities <br />
-          Contact for  frenchisee<br />
+          Contact for  frenchisee</a><br />
         </p></td>
 		 <td width="1" background="images/footerdiv.jpg"></td>
         <td width="48">&nbsp;</td>
-        <td width="161"><p class="style5 style6">Contact Us <br />
-          Career with us <br />
+        <td width="161"><p class="style5 style6"><a href="contactus.php">Contact Us </a><br />
+            <a href="aboutus.php">About us</a> <br />
           Privacy Policies<br />
           Terms &amp; Conditions <br />
         </p></td>
@@ -79,8 +79,34 @@ a:active {
     <td height="35" background="images/footerbody.jpg"><table width="950" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
         <td align="center"><span class="style5">Copyright &copy; 2011 Social Search Book. <a href="http://www.agarwal4agarwal.com/"></a>  All Rights Reserved.<br />
-        Designed and developed by: VaaSS Information Technologies Pvt. Ltd. </span></td>
+         </span></td>
       </tr>
+      <tr>
+      <td align="center"><span class="style5"><script>
+
+/*
+Counter script
+By JavaScript Kit (http://javascriptkit.com)
+Over 400+ free scripts here!
+Above notice MUST stay entact for use
+*/
+
+function fakecounter(){
+
+//decrease/increase counter value (depending on perceived popularity of your site!)
+var decrease_increase=1
+
+var counterdate=new Date()
+var currenthits=counterdate.getTime().toString()
+currenthits=parseInt(currenthits.substring(2,currenthits.length-4))+decrease_increase
+
+document.write("You are visitor # <b>"+currenthits+"</b> to this site!")
+}
+fakecounter()
+</script>
+</span>
+</td>
+</tr>
     </table></td>
   </tr>
   <tr>

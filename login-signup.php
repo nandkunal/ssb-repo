@@ -1,3 +1,8 @@
+<?php
+require_once("administrator/includes/UserFunctions.php");
+$cat_id=1002;
+$banner=UserFunctions::getBannerName($cat_id);
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -24,7 +29,7 @@ body {
 function checkValidation(frm)
 {
 var error="";
-if((frm.username.value=="")||(frm.password.value=="")||(frm.conpassword.value=="")||(frm.name.value=="")||(frm.contact.value=="")||(frm.city.value=="")||(frm.state.value=="")||(frm.country.value=="")||(frm.address.value==""))
+if((frm.username.value=="")||(frm.password.value=="")||(frm.conpassword.value=="")||(frm.name.value=="")||(frm.contact.value=="")||(frm.city.value=="")||(frm.state.value=="")||(frm.country.value=="")||(frm.address.value=="")||(frm.bloodgroup.value==""))
 {
 error+="Please fill all the fields";
 }
@@ -237,6 +242,19 @@ return true;
                           <td height="35"><label>
                             <textarea name="address" cols="40" rows="3"></textarea>
                           </label></td>
+                        </tr>
+                        <tr>
+                          <td height="35">Blood Group</td>
+                          <td height="35">&nbsp;</td>
+                          <td height="35"><label>
+                            <input type="text" name="bloodgroup" class="tb7" />
+                          </label></td>
+                        </tr>
+                          <tr>
+                          <td height="35" colspan="3"><label>
+                            <input type="checkbox" name="donor" value="yes" />
+                            </label>
+                            Ready to be a Blood Donor.</td>
                         </tr>
                         <tr>
                           <td height="35">&nbsp;</td>

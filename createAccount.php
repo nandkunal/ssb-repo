@@ -10,9 +10,17 @@ $distt=$_POST['distt'];
 $state=$_POST['state'];
 $country=$_POST['country'];
 $address=$_POST['address'];
+$bloodgroup=$_POST['bloodgroup'];
+if(isset($_POST['donor'])){
+	$donor="yes";
+}
+else
+{
+	$donor="no";
+}
 $role=7;
 $status=0;
-$res=ADAO::createUsersAccount($username,$password,$name,$email,$contact,$city,$distt,$state,$country,$address,$role,$status);
+$res=ADAO::createUsersAccount($username,$password,$name,$email,$contact,$city,$distt,$state,$country,$address,$role,$status,$bloodgroup,$donor);
 if($res==1){
 	?>
 	<script>
